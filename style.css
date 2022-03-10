@@ -14,7 +14,7 @@ body {
     padding: 0;
     margin: 0;
     position: relative;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     width: 100vw;
     height: 100vh;
@@ -32,13 +32,14 @@ body.wrong {
 .container {
     position: absolute;
     width: 500px;
-    height: 400px;
+    height: 500px;
     max-width: 80vw;
     background-color:rgba(245, 245, 245, 0.822);
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
-    margin-top: 100px;
+    margin-left: 28vw;
+    margin-top: 15%;
 
 }
 .container h4{ 
@@ -55,8 +56,8 @@ h4 {
     border: 1px solid hsl(var(hue), 100%, 30%);
     border-radius: 5px;
     padding: 5px 10px;
-    margin-left: 9vw;
-    color:ba\;
+    margin-left: 70px;
+    color: black;
 }
 #user:hover {
     color: grey;
@@ -68,7 +69,7 @@ h4 {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0);
     background-color: white;
-    margin-left: 13vw;
+    margin-left: 100px;
     text-align: center;
 }
 .btn-grid {
@@ -77,10 +78,10 @@ h4 {
     gap: 10px;
     margin: 20px 0;
 }
-ul {
+/* ul {
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 ul {
     text-align: left;
 }
@@ -101,25 +102,24 @@ li {
     color: black;
 }
 .answerBtn:hover{
-    border-colorrgb: black;
+    border-color: black;
 }
-.controls {
-    
-}
+/* .controls {
+
+} */
 
 .btn {
+    display: block;
     background-color: hsl(var(hue), 100%, 30%);
     border: 1px solid hsl(var(hue), 100%, 30%);
     border-radius: 5px;
     padding: 5px 10px;
     margin: 10px;
     margin-left: 4vw;
-    background-color: rgb(6, 66, 6)
+    background-color: rgb(6, 66, 6);
     color: black;
     width: 40%;
-    align-content: center;
-    
 }
 .btn:hover {
-    border-color:rgb(184, 74, 74));
+    border-color:rgb(184, 74, 74);
 }
