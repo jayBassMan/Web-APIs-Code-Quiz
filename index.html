@@ -9,22 +9,31 @@
 </head>
 <body>
 <section class="container">
+    <h4 id="quote">Code Quiz</h4>
+    <div id="user">
+        <textarea name="user" id="user" placeholder="Enter your username"cols="" rows="1"></textarea>
+    </div>
     <div id="question-container" class="hide">
-        <div id="question">Question</div>
+        <div id="questionBox" class="question">Question</div>
         <div id="answerbtn" class="btn-grid">
-            <button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>∏
-            <button class="btn">Answer 3</button>
-            <button class="btn">Answer 4</button>
+            <ul><h4>Answers!</h4>
+                <li >A<button class="answerBtn" id="answerA" onclick="button(this)"></button></li>
+                <li >B<button class="answerBtn" id="answerb" onclick="button(this)"></button></li>
+                <li >C<button class="answerBtn" id="answerC" onclick="button(this)"></button></li>
+            </ul>
         </div>
     </div>
-</section>
-<section class="controls">
-    <button id="startGameBtn" class="start-btn btn">Start Quiz</button>
-    <button id="nextbtn" class="next-btn bt hide">Next</button>
+    <section class="controls">
+        <button id="startQuizBtn" class="start-btn btn" type="button" onclick="button(this)">Start quiz</button>
+        <button id="nextBtn" class="next-btn btn" type="button" onclick="button(this)">Next</button>
+        </section>
+        <div class="score-card">
+            Score: <span id="score">0</span>
+        </div>
+    
 </section>
 
-    </header>
+
     
     <script src="./script.js"></script>
 </body>

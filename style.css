@@ -1,5 +1,7 @@
 *, *::before, *::after {
     box-sizing: border-box; 
+    padding: 0;
+    margin: 0;
 }
 
 :root {
@@ -11,11 +13,11 @@
 body {
     padding: 0;
     margin: 0;
+    position: relative;
     display: flex;
-    width: 100vh;
-    height: 100vh;
     justify-content: center;
-    align-items: center;
+    width: 100vw;
+    height: 100vh;
     background-color: hsl(var(--hue), 100%, 20%);
 }
 
@@ -28,30 +30,93 @@ body.wrong {
 }
 
 .container {
-    width: 800px;
-    max-width: 80%;
-    background-color: white;
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    max-width: 80vw;
+    background-color:bisque;
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
-}
+    margin-top: 100px;
 
+}
+.container h4{ 
+    position: center;
+    text-align: center;
+}
+h4 {
+    display: inline;
+    position: relative;
+    margin-left: 25vh;
+}
+#user {
+    background-color: hsl(var(hue), 100%, 30%);
+    border: 1px solid hsl(var(hue), 100%, 30%);
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 9vw;
+    color:ba\;
+}
+#user:hover {
+    color: grey;
+}
+.question {
+    width: 280px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    margin-left: 13vw;
+    text-align: center;
+}
 .btn-grid {
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
 }
+ul {
+    flex-direction: column;
+    justify-content: space-between;
+}
+ul {
+    text-align: left;
+}
+li {
+    margin-left: 10px;
+    list-style: none;
+}
+.answerBtn {
+    background-color: hsl(var(hue), 100%, 30%);
+    border: 1px solid hsl(var(hue), 100%, 30%);
+    border-radius: 5px;
+    width: 300px;
+    height: 25px;
+    padding: 5px 5px;
+    margin: 5px;
+    margin-left: 4vw;
+    color: black;
+}
+.answerBtn:hover{
+    border-color:rgb(74, 176, 184)
+}
+.controls {
+    
+}
 
 .btn {
-    --hue: var(--hue-neutral);
-    border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 30%);
+    background-color: hsl(var(hue), 100%, 30%);
+    border: 1px solid hsl(var(hue), 100%, 30%);
     border-radius: 5px;
     padding: 5px 10px;
-    color: white;
-    outline: none;
+    margin: 10px;
+    margin-left: 4vw;
+    color: black;
+    width: 40%;
+    align-content: center;
+    
 }
 .btn:hover {
-    border-color: black;
+    border-color:darkgoldenrod;
 }
