@@ -11,24 +11,26 @@
 <section class="container">
     <h4 id="quote">Code Quiz</h4>
     <div id="user">
-        <textarea name="user" id="user" placeholder="Enter your username"cols="" rows="1"></textarea>
+        <input name="user" id="user" placeholder="Enter your username"cols="0" rows="0"></input>
     </div>
     <div id="question-container" class="hide">
         <div id="questionBox" class="question">Question</div>
         <div id="answerbtn" class="btn-grid">
             <ul><h4>Choices!</h4>
-                <li >A<button class="answerBtn" id="answerA" onclick="button(this)"></button></li>
-                <li >B<button class="answerBtn" id="answerb" onclick="button(this)"></button></li>
-                <li >C<button class="answerBtn" id="answerC" onclick="button(this)"></button></li>
+                <li >A<button class="choiceBtn" id="choiceA" onclick="button(this)">Choice A</button></li>
+                <li >B<button class="choiceBtn" id="choiceb" onclick="button(this)">Choice B</button></li>
+                <li >C<button class="choiceBtn" id="choiceC" onclick="button(this)">Choice C</button></li>
             </ul>
         </div>
     </div>
     <section class="controls">
         <button id="startQuizBtn" class="start-btn btn" type="button" onclick="button(this)">Start quiz</button>
+        <button id="submitBtn" class="submit-btn btn" type="button" onclick="button(this)">Submit</button>
         <button id="nextBtn" class="next-btn btn" type="button" onclick="button(this)">Next</button>
         </section>
         <div class="score-card">
-            Score: <span id="score">0</span>
+            Score: <span class="score-timer" id="score">0</span>
+            Timer: <span class="score-timer" id="timer">0</span>
         </div>
     
 </section>

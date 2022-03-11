@@ -3,43 +3,56 @@
 const startQuizBtn = document.getElementById('startQuizBtn');
 const questionBox = document.getElementById('questionBox');
 const nextBtn = document.getElementById('nextBtn');
+const submitBtn = document.getElementById('submitBtn');
 const counter = document.getElementById('counter');
-const answerA = document.getElementById('answerA');
-const answerB = document.getElementById('answerB');
-const answerC = document.getElementById('answerC');
-const score = document.getElementById('score');
-const user = document.getElementById('user');
-
+const choiceA = document.getElementById('choiceA');
+const choiceB = document.getElementById('choiceB');
+const choiceC = document.getElementById('choiceC');
+// const score = document.getElementById('score');
+// const user = document.getElementById('user');
+const answer = document.querySelector('click','.answer');
 //Score variable
 
 //Store user info
-
+const user = 0;
+const score = 0;
+let quiz = 0;
 //creat question Object//not sure if i need to create answer object integrated with question or should i create anwser object on its own
 var questions =[
     {
     question: "Who is the bootcamp instructor?",
-    answers: ["Gary","Eugene","Nick"],
-    correctAns: 1
+    answerA: "Gary",
+    answerB: "Eugene",
+    answerC: "Nick",
+    correctAns: "answerA"
     },{
     question: "What college is the bootcamp hosted from?",
-    answers: ["University of Texas","University of Texas at Denton","Southern Methodist University"],
-    correctAns: 3
+    answerA: "University of Texas",
+    answerB: "University of Texas at Denton",
+    answerC: "Southern Methodist University",
+    correctAns: "answerC"
     },{
     question: "What is a function?",
-    answers: ["A Template literal","A set of statements that performs a task or calculates a value",
-    "A classification of data that tells the compiler or interpreter how the programmer wants to use the data."],
-    correctAns: 2
+    answerA: "A Template literal",
+    answerB: "A set of statements that performs a task or calculates a value",
+    answerC: "A classification of data that tells the compiler or interpreter how the programmer wants to use the data.",
+    correctAns: "answerB"
     }, {
     question: "Jonathan is the best programer in the entire world.",
-    answers: ["True","False","None of the above statements"],
-    correctAns: 1
+    answerA: "True",
+    answerB: "False",
+    answerC: "None of the above statements",
+    correctAns: "answerA"
     }, {
     question: "What is the syntax to declare a function named 'flashLight'?",
-    answers: ["myFunction flashLight","Function flashLight","function flashLight()"],
-    correctAns: 3
+    answerA: "myFunction flashLight",
+    answerB: "Function flashLight",
+    answerC: "function flashLight()",
+    correctAns: "answerC"
     }
 ]
 var secondsLeft = 15;
+
 function answers(){
 }
 //Get user information for user profile
@@ -48,22 +61,6 @@ function getUserInfo(){
     user = prompt
 }
 
-function quizQuestions() {
-  for (let i = 0; i < questions.length; i++) {
-      questionBox.innerHTML=this.i+1+" "+ this.questions[ithis.i].question
-      answerA.innerHTML=this.questions[this.questions.length].answers[0];
-      answerB.innerHTML=this.questions[this.questions.length].answers[1];
-      answerC.innerHTML=this.questions[this.questions.length].answers[2];
-        var response = window.prompt(questions[i].prompt);
-        if (response == questions[i].correctAns) {
-      score++;
-      alert("Correct!");
-    } else {
-      alert("Wrong!");
-    }
-  }
-  alert("You got " + score + "/" + questions.length);
-}
 function getScore() {
   // THEN I can save my initials and my score
   user.score;
@@ -84,10 +81,31 @@ function gameOver() {
 }
 //create a Game over function
 //WHEN I click the start button
+startQuiz() 
+
 //Create a function for Start button(btn)
-function startGameBtnGenerate(){
-    alert('"Code Quiz")
-    quizQuestions();
+function startQuiz(){
+  const quizQuestions = questions(quiz)
+  questionBox.innerText = quizQuestions.question
+  choiceA.innerText = quizQuestions.answerA
+  choiceB.innerText = quizQuestions.answerB
+  choiceC.innerText = quizQuestions.answerC
+}
+submitBtn.addEventListener('click', () => {
+  let quizAnswer
+
+  answer.forEach(answer => {
+    if(answer.click) {
+      quizAnswer = answer.id
+    }
+  });
+  return answer
+})
+
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    console.log(answer);
+})
 
 // THEN a timer starts 
 //Create a timer function 
