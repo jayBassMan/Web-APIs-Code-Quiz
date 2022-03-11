@@ -1,13 +1,13 @@
 // cCde Quiz
 //Dom Variables
-const startQuizBtn = document.getElementById('startQuizBtn');
+const startQuizBtn = document.querySelector('startQuizBtn');
 const questionBox = document.getElementById('questionBox');
 const nextBtn = document.getElementById('nextBtn');
 const submitBtn = document.getElementById('submitBtn');
 const counter = document.getElementById('counter');
-const choiceA = document.getElementById('choiceA');
-const choiceB = document.getElementById('choiceB');
-const choiceC = document.getElementById('choiceC');
+const choiceA = document.querySelector('choiceA');
+const choiceB = document.querySelector('choiceB');
+const choiceC = document.querySelector('choiceC');
 // const score = document.getElementById('score');
 // const user = document.getElementById('user');
 const answer = document.querySelector('click','.answer');
@@ -52,50 +52,24 @@ var questions =[
     }
 ]
 var secondsLeft = 15;
-
-function answers(){
-}
-//Get user information for user profile
-function getUserInfo(){
-    prompt("What is your name?")
-    user = prompt
-}
-
-function getScore() {
-  // THEN I can save my initials and my score
-  user.score;
-}
-
-function gameOver() {
-  prompt("Out of time! " + Y + N);
-  var choice = toLowerCase.Y || toLowerCase.N;
-  if (choice === Y) {
-    startGameBtn();
-  } else {
-    prompt("Have a nice day!");
-  }
-
-  // WHEN the game is over
-  //Creat a score card function for user
-  getScore();
-}
+var quizStarter = startQuiz();
 //create a Game over function
 //WHEN I click the start button
 startQuiz() 
 
 //Create a function for Start button(btn)
 function startQuiz(){
-  const quizQuestions = questions(quiz)
-  questionBox.innerText = quizQuestions.question
-  choiceA.innerText = quizQuestions.answerA
-  choiceB.innerText = quizQuestions.answerB
-  choiceC.innerText = quizQuestions.answerC
-}
+  const quizQuestions = questions
+  questionBox.innerhtml =quizQuestions.question
+  choiceA.innerHTML = quizQuestions.answerA
+  choiceB.innerHTML = quizQuestions.answerB
+  choiceC.innerHTML = quizQuestions.answerC
+
 submitBtn.addEventListener('click', () => {
   let quizAnswer
 
   answer.forEach(answer => {
-    if(answer.click) {
+    if(answer.click)
       quizAnswer = answer.id
     }
   });
@@ -104,41 +78,45 @@ submitBtn.addEventListener('click', () => {
 
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
-    console.log(answer);
+
+    if(answer){
+      if(answer === quizAnswer[quizQuestions].correctAns){
+        score ++
+      }
+      quizQuestions++
+
+      if(quizQuestions < quizAnswer.length){
+          loadQuiz()
+      } else {
+          quiz.innerHTML = `
+            <h2>You answered correctly at ${score}
+            /${quizQuestions.length} questions
+
+            <button onclick= "location.loadQuiz()">Reload</button>
+          `
+              }
+    }
 })
+}
+
+startQuizBtn.addEventListener('click', startQuiz );
 
 // THEN a timer starts 
-//Create a timer function 
-    // THEN time is subtracted from the clock
-  // Sets interval in variable
-var timerInterval = startTimer(function() {
-    secondsLeft--;
-    timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
 
-    if(secondsLeft === 0) {
-      // Stops execution of action at set interval
-    clearInterval(timerInterval);
-      // Calls function for game over
-    gameOver();
-    }
+// var timerInterval = startTimer(function() {
+//     secondsLeft--;
+//     timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
 
-}, 1000);
+//     if(secondsLeft === 0) {
+//       // Stops execution of action at set interval
+//     clearInterval(timerInterval);
+//       // Calls function for game over
+//     gameOver();
+//     }
+
+// }, 1000);
 
 
-// I am presented with a question
-//Create a questions function
 
-// WHEN I answer a question
-//Create a function for anwsers
-function answers(){
-    answersBtn.document.getElementById("answersBtn1")
-//THEN I am presented with another question
-// WHEN I answer a question incorrectly
-}
-
-//WHEN all questions are answered or the timer reaches 0
-//THEN the game is over
-
-}
 
 
