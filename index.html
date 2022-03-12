@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,41 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-<section class="container">
-    <h4 id="quote">Code Quiz</h4>
-    <div id="user">
-        <input name="user" id="user" placeholder="Enter your username"cols="0" rows="0"></input>
-    </div>
-    <div id="question-container" class="hide">
-        <div id="questionBox" class="question">Question</div>
-        <div id="answerbtn" class="btn-grid">
-            <ul><h4>Choices!</h4>
-                <li >A<button class="choiceBtn" id="choiceA" >Choice A</button></li>
-                <li >B<button class="choiceBtn" id="choiceb">Choice B</button></li>
-                <li >C<button class="choiceBtn" id="choiceC">Choice C</button></li>
-            </ul>
-        </div>
-    </div>
-    <section class="controls">
-        <button id="startQuizBtn" class="start-btn btn" type="button" >Start quiz</button>
-        <button id="submitBtn" class="submit-btn btn" type="button" >Submit</button>
-        <button id="nextBtn" class="next-btn btn" type="button" >Next</button>
-        </section>
+    <section class="container">
         <div class="score-card">
             Score: <span class="score-timer" id="score">0</span>
             Timer: <span class="score-timer" id="timer">0</span>
         </div>
-    
-</section>
+        <div id="intro-page">
+            <h4 id="quote">Code Quiz</h4>
+            <h4>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate fugit voluptatibus ratione delectus
+                fuga aut explicabo, perspiciatis ipsum quis asperiores esse at, rerum accusamus eveniet excepturi vel.
+                Impedit, quisquam laborum.</h4>
+            <button id="startQuizBtn" class="start-btn btn" type="button">Start quiz</button>
+        </div>
+        <div id="question-container" class="hide">
+            <div id="questionBox" class="question">Question</div>
+            <div id="answerbtn" class="btn-grid">
+                <ul>
+                    <h4>Choices!</h4>
+                    <li>A<button class="choiceBtn" id="choiceA">Choice A</button></li>
+                    <li>B<button class="choiceBtn" id="choiceB">Choice B</button></li>
+                    <li>C<button class="choiceBtn" id="choiceC">Choice C</button></li>
+                    <li>D<button class="choiceBtn" id="choiceD">Choice D</button></li>
+                </ul>
+            </div>
+        </div>
+        <div id="user" class="hide">
+            <input name="user" id="user" placeholder="Enter your username" cols="0" rows="0"></input>
+        </div>
+
+    </section>
 
 
-    
+
     <script src="./script.js"></script>
 </body>
+
 </html>
