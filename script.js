@@ -39,7 +39,7 @@ var questions = [
     answerA: "Gary",
     answerB: "Eugene",
     answerC: "Nick",
-    answerD: "lslslslslslslsls",
+    answerD: "Jean",
     correctAns: "answerA",
   },
   {
@@ -47,16 +47,15 @@ var questions = [
     answerA: "University of Texas",
     answerB: "University of Texas at Denton",
     answerC: "Southern Methodist University",
-    answerD: "lslslslslslslsls",
+    answerD: "lorem ipsumn slindkdkn",
     correctAns: "answerC",
   },
   {
-    question: "What is a function?",
-    answerA: "A Template literal",
-    answerB: "A set of statements that performs a task or calculates a value",
-    answerC:
-      "A classification of data that tells the compiler or interpreter how the programmer wants to use the data.",
-    answerD: "lslslslslslslsls",
+    question: "how long did it take Jonathan to program Code Quiz assigned?",
+    answerA: "1 Day",
+    answerB: "4 hours",
+    answerC: "A week",
+    answerD: "Three Weeks",
     correctAns: "answerB",
   },
   {
@@ -64,7 +63,7 @@ var questions = [
     answerA: "True",
     answerB: "False",
     answerC: "None of the above statements",
-    answerD: "lslslslslslslsls",
+    answerD: "if you chose anything but a you're a hater",
     correctAns: "answerA",
   },
   {
@@ -72,147 +71,48 @@ var questions = [
     answerA: "myFunction flashLight",
     answerB: "Function flashLight",
     answerC: "function flashLight()",
-    answerD: "lslslslslslslsls",
+    answerD: "this is a function(){}",
     correctAns: "answerC",
   },
   {
-    question: "What is the syntax to declare a function named 'flashLight'?",
-    answerA: "myFunction flashLight",
-    answerB: "Function flashLight",
-    answerC: "function flashLight()",
-    answerD: "lslslslslslslsls",
+    question: "How do you center text in css?",
+    answerA: "i need my text centered asap",
+    answerB: "Pease center my text",
+    answerC: "center text",
+    answerD: "text-align: center;",
     correctAns: "answerC",
   },
 ];
-var secondsLeft = 15 * questions.length;
+var secondsLeft = 1 * questions.length;
 var timerID = "";
-// var quizStarter = startQuiz();
-//create a Game over function
+
 //WHEN I click the start button
-
-// const quizQuestions = questions;
-// questionBox.innerhtml = quizQuestions.question;
-// choiceA.innerHTML = quizQuestions.answerA;
-// choiceB.innerHTML = quizQuestions.answerB;
-// choiceC.innerHTML = quizQuestions.answerC;
-
-// submitBtn.addEventListener("click", () => {
-//   let quizAnswer;
-
-//   answer.forEach((answer) => {
-//     if (answer.click) {
-//       quizAnswer = answer.id;
-//     }
-//   });
-//   return answer;
-// });
-
-// submitBtn.addEventListener("click", () => {
-
-// const answer = getSelected();
-
-// if (answer) {
-//   if (answer === quizAnswer[quizQuestions].correctAns) {
-//     score++;
-//   }
-//   quizQuestions++;
-
-//   if (quizQuestions < quizAnswer.length) {
-//     loadQuiz();
-//   } else {
-//     quiz.innerHTML = `
-//           <h2>You answered correctly at ${score}
-//           /${quizQuestions.length} questions
-
-//           <button onclick= "location.loadQuiz()">Reload</button>
-//         `;
-//   }
-// }
-// });
-
 function startQuiz() {
   introPage.classList.add("hide");
   questionContainer.classList.remove("hide");
 
-  // timerID = setInterval(() => {
-  //   secondsLeft--;
-  //   timerEl.textContent = secondsLeft + " seconds left till next question.";
-  //     showQuestion();
-  //   if (secondsLeft === 0) {
-  //     // Stops execution of action quat set interval
-  //     clearInterval(timerID);
-  //     // Calls function for game over
-    
-  //     // gameOver();
-  //     };
-
-    var timer = setInterval(() => {
-      secondsLeft--;
-      timerEl.textContent = secondsLeft + " seconds left till next question.";
-      showQuestion();
-      if (index === questions.length) {
-        clearInterval(timer);
-        timerEl.textContent = "Done!";
-      } else {
-        timerEl.textContent = questions[index];
-        index++;
-      }
-    }, 1000);
-    };
-
-  
-
-
-function showQuestion() {
-    questionBox.textContent = questions[index].question
-    choiceA.textContent = questions[index].answerA
-    choiceB.textContent = questions[index].answerB
-    choiceC.textContent = questions[index].answerC
-    choiceD.textContent = questions[index].answerC
-  }
-
-
-startQuizBtn.addEventListener("click", startQuiz);
-
-// THEN a timer starts
-
-// var timerInterval = startTimer(function() {
-//     secondsLeft--;
-//     timeEl.textContent = secondsLeft + " seconds left till colorsplosion.";
-
-//     if(secondsLeft === 0) {
-//       // Stops execution of action at set interval
-//     clearInterval(timerInterval);
-//       // Calls function for game over
-//     gameOver();
-//     }
-
-// }, 1000);
-
-
-function displayFromArray() {
-  var arr = [
-    "Thor",
-    "Hulk",
-    "Captain America",
-    "Dr. Strange",
-    "SpiderMan",
-    "Black Widow",
-    "Hawkeye",
-    "Captain Marvel",
-    "Daredevil",
-    "Loki",
-  ];
-
-  var currIdx = 0;
-
+  // A timer starts
   var timer = setInterval(() => {
-    if (currIdx === arr.length) {
+    secondsLeft--;
+    showQuestion();
+    timerEl.textContent = secondsLeft + " seconds left till next question.";
+
+    if (index === question.timer) {
       clearInterval(timer);
-      mainEl.textContent = "Done!";
+      timerEl.textContent = "Done!";
     } else {
-      mainEl.textContent = arr[currIdx];
-      currIdx++;
+      timerEl.textContent = question[index];
+      index++;
     }
   }, 1000);
 }
+
+function showQuestion() {
+  questionBox.textContent = questions[index].question;
+  choiceA.textContent = questions[index].answerA;
+  choiceB.textContent = questions[index].answerB;
+  choiceC.textContent = questions[index].answerC;
+  choiceD.textContent = questions[index].answerD;
+}
+
+startQuizBtn.addEventListener("click", startQuiz);

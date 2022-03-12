@@ -123,3 +123,6 @@ list-style: none;
 .hide {
     display: none;
 }
+#intro-page {
+    text-align: center;
+}
