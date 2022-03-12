@@ -32,6 +32,8 @@ const user = 0;
 const score = 0;
 let quiz = 0;
 let index = 0;
+let theRightAnswer = true;
+let currentQuestion = {};
 //creat question Object//not sure if i need to create answer object integrated with question or should i create anwser object on its own
 var questions = [
   {
@@ -86,7 +88,7 @@ var questions = [
 var secondsLeft = 1 * questions.length;
 var timerID = "";
 
-//WHEN I click the start button
+//Click the start button and the quiz starts
 function startQuiz() {
   introPage.classList.add("hide");
   questionContainer.classList.remove("hide");
@@ -94,7 +96,7 @@ function startQuiz() {
   // A timer starts
   var timer = setInterval(() => {
     secondsLeft--;
-    showQuestion();
+    showQuestions();
     timerEl.textContent = secondsLeft + " seconds left till next question.";
 
     if (index === question.timer) {
@@ -107,12 +109,14 @@ function startQuiz() {
   }, 1000);
 }
 
-function showQuestion() {
+function showQuestions() {
   questionBox.textContent = questions[index].question;
   choiceA.textContent = questions[index].answerA;
   choiceB.textContent = questions[index].answerB;
   choiceC.textContent = questions[index].answerC;
   choiceD.textContent = questions[index].answerD;
 }
+
+submitBtn.onclick = 
 
 startQuizBtn.addEventListener("click", startQuiz);
