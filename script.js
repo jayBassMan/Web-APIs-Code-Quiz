@@ -1,16 +1,4 @@
-// // code Quiz
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
-// WHEN I answer a question
-// THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and my score
-// //Dom Variables
+//Code Quiz
 const questionContainer = document.querySelector("#question-container");
 const startQuizBtn = document.querySelector("#startQuizBtn");
 const questionBox = document.querySelector("#questionBox");
@@ -93,7 +81,7 @@ var timerID = "";
 function startQuiz() {
   introPage.classList.add("hide");
   questionContainer.classList.remove("hide");
-    showQuestions(theCorrectAnswer());
+    showQuestions();
     
   // A timer starts
   // var timer = setInterval(() => {
@@ -132,12 +120,12 @@ tieTogether = () => {
   
 // }
 
-function theCorrectAnswer(correctAns){
-  let userAns = correctAns;
-  let answer = questions[index].correctAns
-  if(userAns == answer){
-    console.log('Answer is correct!')
-  }
-}
+// function theCorrectAnswer.apply() {
+//   // let userAns = correctAns;
+//   // let answer = questions[index].correctAns
+//   if(answer == questions[index].correctAns) {
+//     console.log('Answer is correct!')
+//   }
+// }
 
 startQuizBtn.addEventListener("click", startQuiz);
