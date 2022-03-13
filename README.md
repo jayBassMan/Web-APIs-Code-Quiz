@@ -3,8 +3,8 @@
 - When clicking  the start button
 - A timer starts then user is presented with a question
 - The question is answered
-- The user is then presented with another question
-- The user can save initials and score
+- The user is then presented with another question until all questions have been answered
+- The user can then save initials and score when game is over.
 ## Final screenshots of initial and results page
 ![alt text](./img/code-quiz-screen-shothot-1.png)
 ![alt text](./img/code-quiz-screen-shothot-2.png)
