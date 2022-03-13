@@ -14,8 +14,9 @@
 const questionContainer = document.querySelector("#question-container");
 const startQuizBtn = document.querySelector("#startQuizBtn");
 const questionBox = document.querySelector("#questionBox");
-const nextBtn = document.querySelector("#nextBtn");
-const submitBtn = document.querySelector("#submitBtn");
+const answerBtn = document.querySelector("#answerBtn");
+// const nextBtn = document.querySelector("#nextBtn");
+// const submitBtn = document.querySelector("#submitBtn");
 const counter = document.querySelector("#counter");
 const choiceA = document.querySelector("#choiceA");
 const choiceB = document.querySelector("#choiceB");
@@ -92,21 +93,24 @@ var timerID = "";
 function startQuiz() {
   introPage.classList.add("hide");
   questionContainer.classList.remove("hide");
-
+    showQuestions(theCorrectAnswer());
+    
   // A timer starts
-  var timer = setInterval(() => {
-    secondsLeft--;
-    showQuestions();
-    timerEl.textContent = secondsLeft + " seconds left till next question.";
+  // var timer = setInterval(() => {
 
-    if (index === question.timer) {
-      clearInterval(timer);
-      timerEl.textContent = "Done!";
-    } else {
-      timerEl.textContent = question[index];
-      index++;
-    }
-  }, 1000);
+  //   secondsLeft--;
+    
+  //   timerEl.textContent = secondsLeft + " seconds left on quiz.";
+  //   let indexQuestion = questions
+  //   if (index === indexQuestion.length) {
+  //     clearInterval();
+    
+  //     timerEl.textContent = "Done!";
+  //   } else {
+  //     timerEl.textContent = indexQuestion[index];
+  //     index++;
+  //   }
+  // }, 1000);
 }
 
 function showQuestions() {
@@ -117,6 +121,23 @@ function showQuestions() {
   choiceD.textContent = questions[index].answerD;
 }
 
-submitBtn.onclick = 
+tieTogether = () => {
+  index++;
+  showQuestions(index);
+  index;
+}
+// const choiceBtn = answerBtn.querySelector('.choiceBtn');
+// for (let i = 0; i < choiceBtn.length; i++) {
+//   choiceBtn[i].setAttribute('theCorrectAnswer(this)');
+  
+// }
+
+function theCorrectAnswer(correctAns){
+  let userAns = correctAns;
+  let answer = questions[index].correctAns
+  if(userAns == answer){
+    console.log('Answer is correct!')
+  }
+}
 
 startQuizBtn.addEventListener("click", startQuiz);
