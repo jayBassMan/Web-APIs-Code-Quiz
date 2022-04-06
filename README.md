@@ -15,7 +15,7 @@
 <https://jaybassman.github.io/Web-APIs-Code-Quiz/>
 
 ## Contributions and Sources
-I worked with the following:
+
 - Phil Loy
 
 

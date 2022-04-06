@@ -11,25 +11,39 @@
 
 <body>
     <section class="container">
-        <div class="score-card">
-            Score: <span class="score-timer" id="score">0</span>
-            Timer: <span class="score-timer" id="timer">0</span>
-        </div>
-        <div id="intro-page">
-            <h1 class="front-page" id="quote">Code Quiz</h1>
-            <h2 class="front-page">Welcome to Jonathan Johnson Code quiz.<br>Lets get started!!</h2>
-            <button id="startQuizBtn" class="start-btn btn" type="button">Start quiz</button>
-        </div>
-        <div id="question-container" class="hide">
-            <div id="questionBox" class="question">Question</div>
-            <div id="answerbtn" class="btn-grid">
-                <ul>
-                    <h4>Choices!</h4>
-                    <li><button onclick="tieTogether()" class="choiceBtn" id="choiceA"></button></li>
-                    <li><button onclick="tieTogether()" class="choiceBtn" id="choiceB"></button></li>
-                    <li><button onclick="tieTogether()" class="choiceBtn" id="choiceC"></button></li>
-                    <li><button onclick="tieTogether()" class="choiceBtn" id="choiceD"></button></li>
-                </ul>
+        <header>
+            <div>
+                <button class="headBtn" id="view-high-scores">View High Scores</button>
+            </div>
+            <div>
+                <p>Timer: <span id="timer">00</span></p>
+                <!-- <p>Score: <span id="score">00</span></p> -->
+            </div>
+        </header>
+        <div class="maindiv">
+            <div id="question-container" class="hide"></div>
+                <div id="intro-page">
+                    <p id="finalScoreDisplay"></p>
+                    <p id="enterInitials"></p>
+                    <textarea name="" id="enterInitialsTextArea" cols="30" rows="10"></textarea>
+                    <h1 class="front-page" id="quote">Code Quiz</h1>
+                    <h2 class="front-page">Welcome to The Code quiz.<br>Lets get started!!</h2>
+                    <button id="startQuizBtn" class="start-btn btn" type="button">Start quiz</button>
+                </div>
+                
+                    <div id="questionBox" class="question">Question</div>
+                    <div id="answerbtn" class="btn-grid">
+                        <ul>
+                            <h4>Choices!</h4>
+                            <li><button  class="choiceBtn" id="choiceA"></button></li>
+                            <li><button  class="choiceBtn" id="choiceB"></button></li>
+                            <li><button  class="choiceBtn" id="choiceC"></button></li>
+                            <li><button  class="choiceBtn" id="choiceD"></button></li>
+                            <li><button  class="choiceBtn" id="submitScore"></button></li>
+                        </ul>
+                    </div> 
+                    <div id="answerCorrectWrongGrid"></div>
+                    <p id="answerCorrectWrong"></p>             
             </div>
         </div>
         <div id="user" class="hide">

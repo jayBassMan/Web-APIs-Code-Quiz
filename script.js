@@ -1,28 +1,47 @@
 //Code Quiz
+
+
 const questionContainer = document.querySelector("#question-container");
-const startQuizBtn = document.querySelector("#startQuizBtn");
+const startBtn = document.querySelector("#startQuizBtn");
 const questionBox = document.querySelector("#questionBox");
 const answerBtn = document.querySelector("#answerBtn");
 // const nextBtn = document.querySelector("#nextBtn");
 // const submitBtn = document.querySelector("#submitBtn");
+const viewUserScores = document.querySelector("#view-high-scores")
 const counter = document.querySelector("#counter");
 const choiceA = document.querySelector("#choiceA");
 const choiceB = document.querySelector("#choiceB");
 const choiceC = document.querySelector("#choiceC");
+const choiceD = document.querySelector("#choiceD");
 const introPage = document.querySelector("#intro-page");
-const timerEl = document.querySelector("#timer");
+const timerDisplay = document.querySelector("#timer");
+const submitScore = document.querySelector("#submitScore");
+const enterInitialsTextArea = document.querySelector("enterInitialsTextArea");
+const answerCorrectWrong = document.querySelector("answerCorrectWrong");
+
+// var secondsLeft = 1 * questions.length;
+var timer = 60; // this is a Global variable called timer and its assigment is a counter
+
 // const score = document.getElementById('score');
 // const user = document.getElementById('user');
-const answer = document.querySelector("click", ".answer");
+// answerCorrectWrong = document.querySelector("click", ".answer");
 //Score variable
 
 //Store user info
 const user = 0;
-const score = 0;
+const score = 50; //var highScore = 50; ; //Score add fix for ticking timer
 let quiz = 0;
-let index = 0;
-let theRightAnswer = true;
+let index = 0; //Question number // Track the question answered.
+let theRightAnswer = true; //var quizStatus = true; // know the status of the quiz. Quiz is not running = false, running = true
 let currentQuestion = {};
+
+choiceA.style.display ='none'
+choiceB.style.display ='none'
+choiceC.style.display ='none'
+choiceD.style.display ='none'
+submitScore.style.display = "none";
+answerCorrectWrong.style.display = "none";
+enterInitialsTextArea.style.display = "none";
 //creat question Object//not sure if i need to create answer object integrated with question or should i create anwser object on its own
 var questions = [
   {
@@ -74,35 +93,86 @@ var questions = [
     correctAns: "answerC",
   },
 ];
-var secondsLeft = 1 * questions.length;
-var timerID = "";
+
+var questionObject = {
+    
+}
+
+
+//Initialize the display timer at default value
+timerDisplay.textContent = timer;
+
+viewUserScores.addEventListener('click', function() { //view users scores
+
+  var users = "";
+  var test = "";
+  var highScores = "";
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const getUserScore = [];
+
+    users = localStorage.getItem(localStorage.key(i));
+    test = users.substring(0,4)
+    if(test == 'quiz') {
+      getUserScore = user.split(",");
+      var userName = checkUserValue[0]
+      highScores += "User" + userName.substring(4) + "high score is: " + getUserScore[1] + "\n"
+    }
+    window.alert(highScores);
+    
+  }
+})
 
 //Click the start button and the quiz starts
-function startQuiz() {
+startBtn.addEventListener('click', function(){
+
+  startBtn.style.display = 'none';
+  questionBox.style.display = 'none'
+  finalScoreDisplayEl.style.display = 'none'
+
   introPage.classList.add("hide");
   questionContainer.classList.remove("hide");
     showQuestions();
-    
-  // A timer starts
-  // var timer = setInterval(() => {
 
-  //   secondsLeft--;
+    var timeInterval = setInterval(function(){
+
+      if (score === 1) {
+        highScore -= 10
+      }
+      score = 0;
+  
+    })
     
-  //   timerEl.textContent = secondsLeft + " seconds left on quiz.";
-  //   let indexQuestion = questions
-  //   if (index === indexQuestion.length) {
-  //     clearInterval();
+    // A timer starts
+    // var timer = setInterval(() => {
     
-  //     timerEl.textContent = "Done!";
-  //   } else {
-  //     timerEl.textContent = indexQuestion[index];
-  //     index++;
-  //   }
-  // }, 1000);
-}
+    //   secondsLeft--;
+    
+    //   timerEl.textContent = secondsLeft + " seconds left on quiz.";
+    //   let indexQuestion = questions
+    //   if (index === indexQuestion.length) {
+    //     clearInterval();
+    
+    //     timerEl.textContent = "Done!";
+    //   } else {
+    //     timerEl.textContent = indexQuestion[index];
+    //     index++;
+    //   }
+    // }, 1000);
+})
+
+
 
 function showQuestions() {
-  questionBox.textContent = questions[index].question;
+  
+  questionBox.textContent = questions.correct[index]
+
+  questionBox.style.display = ""; // Allow the questions to be displayed
+  choiceA.style.display = ""; // Allow our buttons to appear
+  choiceB.style.display = "";
+  choiceC.style.display = "";
+  choiceD.style.display = "";
+
   choiceA.textContent = questions[index].answerA;
   choiceB.textContent = questions[index].answerB;
   choiceC.textContent = questions[index].answerC;
@@ -128,4 +198,4 @@ tieTogether = () => {
 //   }
 // }
 
-startQuizBtn.addEventListener("click", startQuiz);
+
