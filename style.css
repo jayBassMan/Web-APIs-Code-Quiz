@@ -1,128 +1,356 @@
-*{
-    box-sizing: border-box; 
-    padding: 0;
+* {
     margin: 0;
-}
-
-:root {
-    -hue-neutral: 200;
-    -hue-wrong: 0;
-    -hue-correct: 145;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(107, 104, 104);
-}
-
-body.correct{
-    --hue: var(--hue-correct);
-}
-
-body.wrong {
-    --hue: var(--hue-wrong);
-}
-
-.container {
-    display: grid;
-    place-items: center;
-    place-content: center;
-    position: absolute;
-    width: 500px;
-    height: 400px;
-    max-width: 80vw;
-    background-color:rgba(255, 255, 254, 0.938);
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-    margin-top: 100px;
-
-}
-h4 {
-
-}
-#user {
-    background-color: hsl(var(hue), 100%, 30%);
-    border: 1px solid hsl(var(hue), 100%, 30%);
-    border-radius: 5px;
-    margin: 5px;
-}
-#user:hover {
-    color: grey;
-}
-#questionBox, div {
-    display: grid;
-    place-items: center;
-
-}
-.question {
-    display: grid;
-    place-items: center;
-    place-content: center;
-    place-self: center;
-    margin:10px;
-    width: 350px;
-    height: 55px;
-    border: 1px solid black;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0);
+    font-family: 'Merienda';font-size: 22px;
     background-color: white;
 }
-.btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
+
+header {
+    display: flex; /* Flex container to display the child elements as flex with space between and wrap */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    color: rgb(196, 28, 28);
+    height: 60px;
+    font-size: 2vw;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Merienda';font-size: 22px;
+  }
+
+.headBtn {
+    border-radius: 10px;
+    background-color: white;
+    text-decoration: none;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    color: rgb(0, 14, 138);
+    font-family: 'Merienda';font-size: 20px;
 }
 
-ul {
-    text-align: center
+.headBtn:hover {
+
+    background-color: rgb(0, 14, 138);
+    
+  
+    
 }
-li {
-list-style: none;
-}
+
 .choiceBtn {
-    background-color: hsl(var(hue), 100%, 30%);
-    border: 1px solid hsl(var(hue), 100%, 30%);
-    border-radius: 15px;
-    width: 300px;
-    height: 25px;
-    padding: 5px 5px;
-    margin: 5px;
-    background-color: rgb(184, 74, 74);
-    color: black;
-}
-.answerBtn:hover{
-    border-color: black;
-}
-.score-card {
-    display: flex;
-}
-.score-timer {
-    margin: 10px;
+    border-radius: 12px;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    color: white;
+    font-family: 'Merienda';font-size: 10px;
 }
 
-.btn {
-    background-color: hsl(var(hue), 100%, 30%);
-    border: 1px solid hsl(var(hue), 100%, 30%);
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 10px;
-    background-color: rgb(92, 84, 84);
-    color: white;  
+
+
+#mainDiv {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    font-family: 'Merienda';font-size: 22px;
 }
-.btn:hover {
-    border-color:rgb(184, 74, 74);
+
+
+
+
+#gridContainer {
+   /* width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr 1fr;  /* Create a 4X4 grid of same size*/
+    grid-template-rows: repeat(10, 1fr); /* 4 rows of equal size */
+    gap: 10px 10px; /* Gap on x and y grid */
+    font-family: 'Merienda';font-size: 22px;
 }
-.hide {
-    display: none;
-}
-#intro-page {
+
+
+#questionBox {
     text-align: center;
+    align-self: baseline;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 5;
+    place-self: center;
+    font-size: 30px;
 }
+
+#finalScoreDisplay {
+    
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    font-size: 15px;
+}
+
+
+
+#enterInitials {
+    
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 15px;
+}
+
+
+#enterInitialsTextArea {
+    
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 15px;
+    resize: none;
+    
+}
+
+#submitScore {
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+}
+
+#startQuizBtn {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    place-self: center;
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+}
+
+#choiceA {
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+}
+
+#choiceB {
+    grid-column: 1 / span 2;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+    margin-left: 25px;
+
+}
+
+#choiceC {
+    grid-column: 1 / span 2;
+    grid-row: 8 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+}
+
+#choiceD {
+    grid-column: 1 / span 2;
+    grid-row: 9 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0; /* Remove border around button */
+    background-color: rgb(0, 9, 128);
+    color: white;
+    font-family: 'Merienda';font-size: 15px;
+    margin-left: 25px;
+}
+
+
+
+
+
+
+#choiceA:hover{
+    
+    background-color: rgb(92, 173, 84);
+     
+}
+
+#choiceB:hover{
+    
+    background-color: rgb(92, 173, 84);
+  
+}
+
+#choiceC:hover{
+    
+    background-color: rgb(92, 173, 84);
+  
+}
+
+#choiceD:hover{
+    
+    background-color: rgb(92, 173, 84);
+  
+}
+
+#submitScore:hover{
+    
+    background-color: rgb(92, 173, 84);
+  
+}
+
+
+
+#answerCorrectWrongGrid {
+    /*width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
+    display: grid;
+    grid-template-columns: 4fr;  /* Create a 4X4 grid of same size*/
+    grid-template-rows: repeat(2, 1fr); /* 4 rows of equal size */
+    gap: 10px 10px; /* Gap on x and y grid */
+    font-family: 'Merienda';font-size: 22px;
+
+}
+
+#answerCorrectWrong {
+    text-align: left;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+    
+}
+
+
+/* This will be applied on any screen smaller than 768px */
+@media screen and (max-width: 768px) {
+
+
+    
+    #choiceA:hover{
+        
+        background-color: rgb(0, 9, 128);
+        
+    }
+
+    #choiceB:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+    #choiceC:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+    #choiceD:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+    #submitScore:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+
+
+    #questionBox {
+        font-size: 25px;
+    }
+    
+    #choiceA {
+        grid-column: 2 / span 2;
+    }
+    
+    #choiceB {
+        grid-column: 2 / span 2;
+           
+    }
+    
+    #choiceC {
+        grid-column: 2 / span 2;
+    }
+    
+    #choiceD {
+        grid-column: 2 / span 2;
+    }
+    
+  
+
+}
+
+
+   /* This will be applied on any screen smaller than 575px */
+@media screen and  (max-width: 575px) {
+
+    #choiceA:hover{
+        
+        background-color: rgb(0, 9, 128);
+        
+    }
+
+    #choiceB:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+    #choiceC:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+    #choiceD:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+    #submitScore:hover{
+        
+        background-color: rgb(0, 9, 128);
+    
+    }
+
+
+    #mainDiv {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #questionBox {
+        grid-column: 2 / span 2;
+        font-size: 15px;
+    }
+  
+
+  }
