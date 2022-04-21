@@ -6,8 +6,9 @@
 - The user is then presented with another question until all questions have been answered
 - The user can then save initials and score when game is over.
 ## Final screenshots of initial and results page
-![alt text](./img/code-quiz-screen-shothot-1.png)
-![alt text](./img/code-quiz-screen-shothot-2.png)
+![alt text](./assets/img/start.png)
+![alt text](./assets/img/questions.png)
+![alt text](./assets/img/final.png)
 
 ## Links for Github Repository and final public page
 <https://github.com/jayBassMan/Web-APIs-Code-Quiz>
